@@ -11,10 +11,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         System.out.println("这个是源文件");//提交new code 从原始方提交  new code 222
-        //222
-        //333
-        //444
-        //555
+        //888
         System.out.println("这个是网上download下来的！");
 
     }
