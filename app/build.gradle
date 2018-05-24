@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2'
+    }
+}
+
+greendao {
+    schemaVersion 1  //版本
+    daoPackage 'com.test.greendao.greendaoproject.dao' // 一般为app包名+生成文件的文件夹名 //属于targetGenDir的子目录
+    targetGenDir 'src/main/java/' //生成文件路径  //属于生成的一级目录
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "27.0.3"
+    defaultConfig {
+        applicationId "com.test.greendao.greendaoproject"
+        minSdkVersion 19
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+
+    //#### 下面为GreenDao的引用类库 ###
+    compile 'org.greenrobot:greendao:3.2.2'
+    //compile 'net.zetetic:android-database-sqlcipher:3.5.4'//加密数据库使用的类库
+}
