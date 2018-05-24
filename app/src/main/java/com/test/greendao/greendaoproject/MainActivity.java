@@ -12,8 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
         System.out.println("这个是源文件");//提交new code 从原始方提交  new code 222
         //zzzwww111
-        //222
-        //333555
+
         System.out.println("这个是网上download下来的！");
 
     }
