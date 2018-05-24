@@ -18,7 +18,7 @@ import org.greenrobot.greendao.query.QueryBuilder;
  */
 
 public class MyApplication extends Application {
-
+    private boolean isTest = true;
     //非加密的DaoSession
     private static DaoSession daoSession;
     private static DaoSession enctryptDaoSession;
